@@ -21,14 +21,14 @@ import android.support.v7.widget.RecyclerView;
 public interface DraggableItemAdapter<T extends RecyclerView.ViewHolder> {
 
     /**
-     * Called when user is attempt to drag the item.
+     * 意图拖动Item时调用该方法
      *
      * @param holder The ViewHolder which is associated to item user is attempt to start dragging.
      * @param position The position of the item within the adapter's data set.
      * @param x Touched X position. Relative from the itemView's top-left.
      * @param y Touched Y position. Relative from the itemView's top-left.
 
-     * @return Whether can start dragging.
+     * @return 是否能开始进行拖动
      */
     boolean onCheckCanStartDrag(T holder, int position, int x, int y);
 

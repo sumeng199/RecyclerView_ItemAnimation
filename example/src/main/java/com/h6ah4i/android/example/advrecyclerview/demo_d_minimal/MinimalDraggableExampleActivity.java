@@ -88,7 +88,9 @@ public class MinimalDraggableExampleActivity extends AppCompatActivity {
         List<MyItem> mItems;
 
         public MyAdapter() {
-            setHasStableIds(true); // this is required for D&D feature.
+            // this is required for D&D feature.
+            // RecyclerView.Adapter中不能复写父类的方法，需要在初始化的时候调用setHasStableIds(true); 来完成相同功能
+            setHasStableIds(true);
 
             mItems = new ArrayList<>();
             for (int i = 0; i < 20; i++) {
@@ -118,8 +120,9 @@ public class MinimalDraggableExampleActivity extends AppCompatActivity {
             return mItems.size();
         }
 
+
         @Override
-        public void onMoveItem(int fromPosition, int toPosition) {
+        public void onMoveItem(int fromPosition, int toPosition) {  // item移动时调用
             MyItem movedItem = mItems.remove(fromPosition);
             mItems.add(toPosition, movedItem);
             notifyItemMoved(fromPosition, toPosition);

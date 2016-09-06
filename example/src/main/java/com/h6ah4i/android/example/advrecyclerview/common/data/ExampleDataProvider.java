@@ -22,6 +22,9 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * 初始化Item数据源
+ */
 public class ExampleDataProvider extends AbstractDataProvider {
     private List<ConcreteData> mData;
     private ConcreteData mLastRemovedData;

@@ -17,6 +17,7 @@
 package com.h6ah4i.android.example.advrecyclerview.demo_d_basic;
 
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 
@@ -25,7 +26,7 @@ import com.h6ah4i.android.example.advrecyclerview.common.data.AbstractDataProvid
 import com.h6ah4i.android.example.advrecyclerview.common.fragment.ExampleDataProviderFragment;
 
 public class DraggableExampleActivity extends AppCompatActivity {
-    private static final String FRAGMENT_TAG_DATA_PROVIDER = "data provider";
+    private static final String FRAGMENT_TAG_DATA_PROVIDER = "data provider";  // 数据源Fragment  Tag
     private static final String FRAGMENT_LIST_VIEW = "list view";
 
     @Override
@@ -41,6 +42,8 @@ public class DraggableExampleActivity extends AppCompatActivity {
                     .add(R.id.container, new DraggableExampleFragment(), FRAGMENT_LIST_VIEW)
                     .commit();
         }
+
+        Snackbar.make(findViewById(R.id.container), "TIP: 长按左侧灰色区域进行拖动", Snackbar.LENGTH_LONG).show();
     }
 
     public AbstractDataProvider getDataProvider() {
